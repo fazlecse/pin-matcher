@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pin Generator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="pin-generator half-width">
+                    <input id="generate-display" class="form-control" type="text">
+                    <button id="generate-btn" class="generate-btn">Generate Pin</button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <form action="">
+                    <div class="input-section half-width">
+                        <input id="submit-display-input" class="form-control" type="text" name="display">
+                        <div class="numbers">
+                            <div class="calc-body">
+                                <div class="calc-button-row">
+                                    <input type="button" class="button" value="7" onclick="display.value += '7' ">
+                                    <input type="button" class="button" value="8" onclick="display.value += '8' ">
+                                    <input type="button" class="button" value="9" onclick="display.value += '9' ">
+                                </div>
+                                <div class="calc-button-row">
+                                    <input type="button" class="button" value="4" onclick="display.value += '4' ">
+                                    <input type="button" class="button" value="5" onclick="display.value += '5' ">
+                                    <input type="button" class="button" value="6" onclick="display.value += '6' ">
+                                </div>
+                                <div class="calc-button-row">
+                                    <input type="button" class="button" value="1" onclick="display.value += '1' ">
+                                    <input type="button" class="button" value="2" onclick="display.value += '2' ">
+                                    <input type="button" class="button" value="3" onclick="display.value += '3' ">
+                                </div>
+                                <div class="calc-button-row">
+                                    <input type="button" class="button" value="&lt;" onclick="display.value=display.value.toString().slice(0, -1)">
+                                    <input type="button" class="button" value="0" onclick="display.value += '0' ">
+                                    <input type="button" class="button" value="C" onclick="display.value = ' ' ">
+                                </div>
+                                <div>
+                                    <button id="submit-btn" onclick="getVerification()" type="button" class="submit-btn">Submit</button>
+                                    <p class="action-left"><span onclick="actionLeft()" id="action-left">3</span> try left</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="notify-section">
+                <p id="notify-faild" class="notify faild">❌ Pin Didn't Match, Please try again</p>
+                <p id="notify-succuss" class="notify succuss">✅ Pin Matched... Secret door is opening for you</p>
+            </div>
+        </div>
+
+        <script src="main.js"></script>
+</body>
+
+</html>
